@@ -67,7 +67,7 @@ const DashboardMain: FC<{}> = () => {
   const { scrollElem, scrollByIndex, activeIndex } = useImageCarousel();
 
   return (
-    <section className="relative w-screen h-screen">
+    <section className="relative w-screen h-screen bg-gray-50">
       {/* Images */}
       <div className="flex overflow-hidden" ref={scrollElem}>
         {ImageList.map((image, index) => (
@@ -77,9 +77,9 @@ const DashboardMain: FC<{}> = () => {
         <figcaption className="fixed w-screen flex items-center justify-center bottom-8">
           {ImageList.map((_, index) => {
             let componentClassName =
-              "rounded-full w-1 h-1 border-8 z-10 mx-1 cursor-pointer shadow-lg border-gray-400";
+              "rounded-full w-1 h-1 border-4 z-10 mx-1 cursor-pointer shadow-lg border-gray-400";
             if (activeIndex === index) {
-              componentClassName += "shadow-2xl border-gray-50";
+              componentClassName += "shadow-2xl border-gray-200";
             }
             return (
               <div
