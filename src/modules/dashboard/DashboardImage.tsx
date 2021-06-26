@@ -12,12 +12,12 @@ const DashboardImage: FC<Props> = (props) => {
 
   return (
     <div className="relative h-screen w-screen flex-shrink-0">
-      <picture>
+      <picture className="h-full w-full">
         <source srcSet={webp} type="image/webp" />
         <source srcSet={jpg} type="image/jpeg" />
-        <img src={jpg} alt={alt} />
+        <img className="h-full w-full" src={jpg} alt={alt} />
       </picture>
-      <div className="absolute bottom-4 left-2 py-1 px-4 w-72 bg-white rounded-md shadow-md">
+      <div className="absolute bottom-14 md:bottom-4 md:left-2 py-1 px-4 w-72 bg-white rounded-md shadow-md">
         <h1>{name}</h1>
         <h3 className="text-gray-400 text-sm">{place}</h3>
       </div>

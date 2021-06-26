@@ -67,7 +67,7 @@ const DashboardMain: FC<{}> = () => {
   const { scrollElem, scrollByIndex, activeIndex } = useImageCarousel();
 
   return (
-    <section className="relative">
+    <section className="relative w-screen h-screen">
       {/* Images */}
       <div className="flex overflow-hidden" ref={scrollElem}>
         {ImageList.map((image, index) => (
