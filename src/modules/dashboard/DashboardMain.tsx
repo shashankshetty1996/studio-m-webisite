@@ -1,5 +1,7 @@
 import { FC } from "react";
 
+import { Loader } from "../../components";
+
 const DashboardMain: FC<{}> = () => {
   return (
     <section>

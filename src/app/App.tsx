@@ -2,6 +2,7 @@ import { FC, lazy, Suspense } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import ErrorBoundary from "./ErrorBoundary";
+import { Loader } from "../components";
 import router from "../router";
 
 const DashboardMain = lazy(
@@ -31,7 +32,7 @@ const App: FC<{}> = () => {
   return (
     <BrowserRouter>
       <ErrorBoundary>
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<Loader />}>
           <Switch>
             <Route
               exact
