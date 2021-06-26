@@ -9,6 +9,6 @@ const App: FC<{}> = () => {
       </div>
     </div>
   );
-}
+};
 
 export default App;
