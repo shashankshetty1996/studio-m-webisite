@@ -1,25 +1,7 @@
 import { FC, useState, useEffect, useRef } from "react";
 
-import CoverPhoto1 from "../../assets/dashboard/cover1.webp";
-import CoverPhoto2 from "../../assets/dashboard/cover2.webp";
-import CoverPhoto3 from "../../assets/dashboard/cover3.webp";
-import CoverPhoto4 from "../../assets/dashboard/cover4.webp";
-import CoverPhoto5 from "../../assets/dashboard/cover5.webp";
-import CoverPhoto6 from "../../assets/dashboard/cover6.webp";
-
-interface Image {
-  source: string;
-  alt: string;
-}
-
-const ImageList: Image[] = [
-  { source: CoverPhoto1, alt: "cover pic" },
-  { source: CoverPhoto2, alt: "cover pic" },
-  { source: CoverPhoto3, alt: "cover pic" },
-  { source: CoverPhoto4, alt: "cover pic" },
-  { source: CoverPhoto5, alt: "cover pic" },
-  { source: CoverPhoto6, alt: "cover pic" },
-];
+import DashboardImage from "./DashboardImage";
+import { ImageList } from "./DashboardImageList";
 
 interface useImageCarouselResponse {
   activeIndex: number;
@@ -89,9 +71,7 @@ const DashboardMain: FC<{}> = () => {
       {/* Images */}
       <div className="flex overflow-hidden" ref={scrollElem}>
         {ImageList.map((image, index) => (
-          <div key={index} className="h-screen w-screen flex-shrink-0">
-            <img className="h-full w-full" src={image.source} alt={image.alt} />
-          </div>
+          <DashboardImage key={index} image={image} />
         ))}
         {/* indicators */}
         <figcaption className="fixed w-screen flex items-center justify-center bottom-8">
