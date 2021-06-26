@@ -1,13 +1,13 @@
-import React, { FC } from "react";
-import "./App.css";
+import { FC } from "react";
+import ErrorBoundary from "./ErrorBoundary";
 
 const App: FC<{}> = () => {
   return (
-    <div className="App">
+    <ErrorBoundary>
       <div className="flex items-center justify-center h-screen">
         <h1>Studio M website launching soon!</h1>
       </div>
-    </div>
+    </ErrorBoundary>
   );
 };
 
