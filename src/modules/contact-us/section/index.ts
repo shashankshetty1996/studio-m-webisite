@@ -1,0 +1,1 @@
+export { default as MeetTheTeam } from './meet-the-team/MeetTheTeam';

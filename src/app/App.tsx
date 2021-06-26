@@ -24,7 +24,7 @@ const ProjectsMain = lazy(
 const ContactUsMain = lazy(
   () =>
     import(
-      /* webpackChunkName: "contact_us" */ "../modules/contact_us/ContactUsMain"
+      /* webpackChunkName: "contact_us" */ "../modules/contact-us/ContactUsMain"
     )
 );
 
