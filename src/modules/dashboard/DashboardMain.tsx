@@ -77,7 +77,7 @@ const DashboardMain: FC<{}> = () => {
         <figcaption className="fixed w-screen flex items-center justify-center bottom-8">
           {ImageList.map((_, index) => {
             let componentClassName =
-              "rounded-full w-1 h-1 border-4 z-10 mx-1 cursor-pointer shadow-lg border-gray-400";
+              "rounded-full w-1 h-1 border-4 z-10 mx-2 cursor-pointer shadow-lg border-gray-400";
             if (activeIndex === index) {
               componentClassName += "shadow-2xl border-gray-200";
             }
