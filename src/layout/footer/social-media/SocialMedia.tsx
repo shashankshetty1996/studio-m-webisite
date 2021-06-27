@@ -1,21 +1,13 @@
 import { FC } from "react";
 
-import fbIcon from "../../../../assets/icons/social/facebook.svg";
-import InstagramIcon from "../../../../assets/icons/social/instagram.svg";
-import linkedInIcon from "../../../../assets/icons/social/linkedin.svg";
-import whatsappIcon from "../../../../assets/icons/social/whatsapp.svg";
+import InstagramIcon from "../../../assets/icons/instagram.svg";
 
 interface social {
   link: string;
   imageSource: string;
 }
 
-const socialMedia: social[] = [
-  { link: "#", imageSource: InstagramIcon },
-  { link: "#", imageSource: whatsappIcon },
-  { link: "#", imageSource: linkedInIcon },
-  { link: "#", imageSource: fbIcon },
-];
+const socialMedia: social[] = [{ link: "#", imageSource: InstagramIcon }];
 
 const SocialMedia: FC<{}> = () => {
   return (
