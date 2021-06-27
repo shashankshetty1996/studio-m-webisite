@@ -7,7 +7,12 @@ interface social {
   imageSource: string;
 }
 
-const socialMedia: social[] = [{ link: "#", imageSource: InstagramIcon }];
+const socialMedia: social[] = [
+  {
+    link: "https://www.instagram.com/studio_m_india/",
+    imageSource: InstagramIcon,
+  },
+];
 
 const SocialMedia: FC<{}> = () => {
   return (
