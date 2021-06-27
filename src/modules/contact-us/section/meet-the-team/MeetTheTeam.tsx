@@ -7,7 +7,7 @@ import SanjanPic from "../../../../assets/team/sanjan.jpeg";
 import AmulyaPic from "../../../../assets/team/amulya.jpeg";
 import DeviPriyaPic from "../../../../assets/team/devi_priya.jpeg";
 
-import { ReactComponent as SendMail } from "../../../../assets/send_mail.svg";
+import { ReactComponent as SendMail } from "../../../../assets/icons/send_mail.svg";
 
 interface Member {
   image: string;
@@ -52,6 +52,7 @@ const members: Member[] = [
   },
 ];
 
+// TODO: large screen size fix
 const MeetTheTeam: FC<{}> = () => {
   return (
     <section className="container mx-auto">
