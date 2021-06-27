@@ -18,8 +18,8 @@ const ContactUsMain: FC<{}> = () => {
       {/* about team */}
       <MeetTheTeam />
       {/* Contact info */}
-      <div className="container mx-auto my-4">
-        <h1 className="text-center text-5xl md:text-6xl py-4">
+      <div className="container mx-auto pb-2">
+        <h1 className="text-center text-3xl md:text-4xl py-2">
           Contact Details
         </h1>
         <p className="text-sm md:text-md text-gray-600 text-center italic">

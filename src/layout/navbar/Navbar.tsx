@@ -1,15 +1,13 @@
 import { FC, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { NavbarItem, SocialMedia } from "./section";
+import { NavbarItem } from "./section";
 import { Drawer } from "../../components";
 
 import router from "../../router";
 
 import { ReactComponent as MenuIcon } from "../../assets/icons/menu.svg";
 import { ReactComponent as CrossIcon } from "../../assets/icons/cross.svg";
-
-import LogoIcon from "../../assets/icons/logo.png";
 
 import "./Navbar.css";
 
@@ -34,13 +32,14 @@ const Navbar: FC<{}> = () => {
 
   const LogoComponent = (
     <Link to="/">
-      <img className="w-32 h-12" src={LogoIcon} alt="Studio M" />
+      {/* <img className="w-32 h-12" src={LogoIcon} alt="Studio M" /> */}
+      <p className="logo font-black uppercase text-2xl">Studio M</p>
     </Link>
   );
   const MenuComponent = showMenu ? CrossIcon : MenuIcon;
 
   return (
-    <header className="fixed inset-0 z-20 w-screen h-16 shadow-md bg-white">
+    <header className="fixed inset-0 z-20 w-screen h-16 bg-white">
       <div className="relative container mx-auto px-4 md:px-0 h-full flex items-center justify-between">
         {LogoComponent}
         {/* Menu icon, only for mobile view */}
@@ -55,26 +54,21 @@ const Navbar: FC<{}> = () => {
               {menu.label}
             </NavbarItem>
           ))}
-          <SocialMedia />
+          {/* <SocialMedia /> */}
         </div>
       </div>
       {/* side drawer */}
       <Drawer className="md:hidden" show={showMenu}>
-        <div className="flex flex-col justify-between h-full pb-4">
-          <div className="flex flex-col w-full">
-            <div className="m-2">{LogoComponent}</div>
-            {menuListWithHome.map((menu, index) => (
-              <NavbarItem key={index} route={menu.route} onClick={toggleMenu}>
-                {menu.label}
-              </NavbarItem>
-            ))}
-          </div>
-          {/* social section */}
-          <div className="flex items-center justify-around px-2">
-            <h1 className="text-xl mb-2">Follow us:</h1>
-            <SocialMedia />
-          </div>
+        {/* <div className="flex flex-col justify-between h-full"> */}
+        <div className="flex flex-col w-full h-full">
+          <div className="m-2">{LogoComponent}</div>
+          {menuListWithHome.map((menu, index) => (
+            <NavbarItem key={index} route={menu.route} onClick={toggleMenu}>
+              {menu.label}
+            </NavbarItem>
+          ))}
         </div>
+        {/* </div> */}
       </Drawer>
     </header>
   );
