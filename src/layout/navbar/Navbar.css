@@ -1,4 +1,17 @@
-.active {
+.nav-link.active {
   color: white;
   background-color: var(--brand-color);
+}
+
+@media (min-width: 768px) {
+  .nav-link {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: initial;
+    border-bottom: 1px solid var(--brand-color);
+    color: var(--brand-color);
+  }
 }

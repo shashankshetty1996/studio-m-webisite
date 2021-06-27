@@ -17,18 +17,18 @@ const socialMedia: social[] = [
   { link: "#", imageSource: fbIcon },
 ];
 
-const SocialMedia: FC = () => {
+const SocialMedia: FC<{}> = () => {
   return (
     <div className="flex items-center justify-center">
       {socialMedia.map((social, index) => (
         <a
-          className="mx-2 hover:scale-x-50"
+          className="mx-2 transform hover:scale-150"
           key={index}
           href={social.link}
           target="_blank"
           rel="noreferrer"
         >
-          <img className="w-8 h-8" src={social.imageSource} alt={social.link} />
+          <img className="w-6 h-6" src={social.imageSource} alt={social.link} />
         </a>
       ))}
     </div>

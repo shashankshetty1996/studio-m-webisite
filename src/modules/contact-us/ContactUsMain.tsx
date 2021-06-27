@@ -13,7 +13,7 @@ const EmailLink: FC<{ link: string }> = (props) => (
 
 const ContactUsMain: FC<{}> = () => {
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 mt-16">
       {/* banner image */}
       {/* about team */}
       <MeetTheTeam />

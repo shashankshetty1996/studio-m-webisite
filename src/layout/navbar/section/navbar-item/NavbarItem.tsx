@@ -4,13 +4,15 @@ import { NavLink } from "react-router-dom";
 interface Props {
   route: string;
   onClick: () => void;
+  size?: "small" | "large";
 }
 
 const NavbarItem: FC<Props> = (props) => {
-  const { children, route, onClick } = props;
+  const { children, route, onClick, size = "small" } = props;
+  const textSize = size === "small" ? "text-xl" : "text-3xl";
   return (
     <NavLink
-      className="cursor-pointer list-none px-4 py-2 text-gray-700 text-3xl"
+      className={`nav-link cursor-pointer px-4 py-2 text-gray-700 ${textSize}`}
       to={route}
       onClick={onClick}
       exact
