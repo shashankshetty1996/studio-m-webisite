@@ -1,5 +1,6 @@
 import { FC } from "react";
 
+import { Footer } from "../../layout";
 import { MeetTheTeam } from "./section";
 
 const EmailLink: FC<{ link: string }> = (props) => (
@@ -27,6 +28,7 @@ const ContactUsMain: FC<{}> = () => {
           and any other enquiry @ <EmailLink link="studiomonish@gmail.com" />
         </p>
       </div>
+      <Footer />
     </section>
   );
 };
