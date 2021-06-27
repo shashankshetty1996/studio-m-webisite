@@ -2,6 +2,7 @@ import { FC, lazy, Suspense } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import ErrorBoundary from "./ErrorBoundary";
+import { Navbar } from "../layout";
 import { Loader } from "../components";
 import router from "../router";
 
@@ -32,6 +33,7 @@ const App: FC<{}> = () => {
   return (
     <BrowserRouter>
       <ErrorBoundary>
+        <Navbar />
         <Suspense fallback={<Loader />}>
           <Switch>
             <Route
