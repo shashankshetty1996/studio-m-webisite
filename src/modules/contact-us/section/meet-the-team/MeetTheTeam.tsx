@@ -7,8 +7,6 @@ import SanjanPic from "../../../../assets/team/sanjan.jpeg";
 import AmulyaPic from "../../../../assets/team/amulya.jpeg";
 import DeviPriyaPic from "../../../../assets/team/devi_priya.jpeg";
 
-import { ReactComponent as SendMail } from "../../../../assets/icons/send_mail.svg";
-
 interface Member {
   image: string;
   name: string;
@@ -22,14 +20,12 @@ const members: Member[] = [
     image: MonishPic,
     name: "Monish BT",
     designation: "Partner & Founder",
-    email: "studiomonish@gmail.com",
     education: ["Bachelors in Architecture, India"],
   },
   {
     image: SanjanPic,
     name: "Sanjana Bysani",
     designation: "Partner",
-    email: "sanjanabysani@gmail.com",
     education: [
       "Bachelors in Architecture, India",
       "MS in Land & Property Development | TX,USA",
@@ -52,19 +48,18 @@ const members: Member[] = [
   },
 ];
 
-// TODO: large screen size fix
 const MeetTheTeam: FC<{}> = () => {
   return (
     <section className="container mx-auto">
-      <h1 className="text-center text-5xl md:text-6xl py-8">Meet Our Team</h1>
+      <h1 className="text-center text-3xl md:text-4xl py-2">Meet Our Team</h1>
       <div className="flex flex-wrap md:flex-nowrap items-center justify-around">
         {members.map((member, index) => (
           <Card
             key={index}
             image={member.image}
             alt={member.name}
-            containerClassName="relative w-60 h-96 mx-2 px-2 my-4"
-            className="w-52 h-52 mx-auto my-2"
+            containerClassName="relative w-60 h-80 mx-2 px-2"
+            className="w-40 h-40 mx-auto my-2"
           >
             <div className="text-center px-3">
               <h1 className="text-3xl text-gray-900">{member.name}</h1>
@@ -81,14 +76,6 @@ const MeetTheTeam: FC<{}> = () => {
                 </div>
               )}
             </div>
-            {member.email && (
-              <a
-                href={`mailto:${member.email}`}
-                className="absolute bottom-0 left-0 w-full py-2 px-4 bg-red-500 text-white text-center font-semibold rounded-md shadow-md hover:bg-red-700 focus:outline-none flex justify-center"
-              >
-                <SendMail className="mx-1" /> Email us
-              </a>
-            )}
           </Card>
         ))}
       </div>

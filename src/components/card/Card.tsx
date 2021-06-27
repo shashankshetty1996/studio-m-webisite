@@ -10,7 +10,7 @@ interface Props {
 const Card: FC<Props> = (props) => {
   const { image, alt, children, containerClassName, className } = props;
 
-  const componentClassName = `rounded-md shadow-md hover:shadow-xl ${containerClassName}`;
+  const componentClassName = `rounded-md ${containerClassName}`;
   const imageClassName = `rounded-full ${className}`;
 
   return (
