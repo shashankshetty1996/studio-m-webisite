@@ -10,7 +10,8 @@ interface useImageCarouselResponse {
 }
 
 type interval = NodeJS.Timeout | undefined;
-const duration = 5000;
+// const duration = 5000;
+const duration = 500000000;
 const windowWidth = window.innerWidth;
 const useImageCarousel = (): useImageCarouselResponse => {
   const [index, setIndex] = useState<number>(0);
@@ -69,7 +70,7 @@ const DashboardMain: FC<{}> = () => {
   return (
     <section className="relative w-screen h-screen bg-gray-50">
       {/* Images */}
-      <div className="flex overflow-hidden" ref={scrollElem}>
+      <div className="flex overflow-hidden md:h-full" ref={scrollElem}>
         {ImageList.map((image, index) => (
           <DashboardImage key={index} image={image} />
         ))}

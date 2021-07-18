@@ -4,15 +4,17 @@ interface Props {
   webp: string;
   jpg: string;
   alt: string;
+  containerClassName?: string;
+  className?: string;
 }
 
 const Image: FC<Props> = (props) => {
-  const { webp, jpg, alt } = props;
+  const { webp, jpg, alt, containerClassName, className } = props;
   return (
-    <picture>
-      <source srcSet={webp} type="image/webp" />
-      <source srcSet={jpg} type="image/jpeg" />
-      <img src={jpg} alt={alt} />
+    <picture className={containerClassName}>
+      <source className={className} srcSet={webp} type="image/webp" />
+      <source className={className} srcSet={jpg} type="image/jpeg" />
+      <img className={className} src={jpg} alt={alt} />
     </picture>
   );
 };
