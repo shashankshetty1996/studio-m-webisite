@@ -13,8 +13,8 @@ const DashboardImage: FC<Props> = (props) => {
   const alt = `${name}, ${place}`;
 
   return (
-    <div className="relative flex flex-col items-center justify-center md:block h-screen w-screen flex-shrink-0">
-      <Image webp={webp} jpg={jpg} alt={alt} />
+    <div className="relative flex flex-col items-center justify-center md:block h-screen md:h-full w-screen flex-shrink-0">
+      <Image className="md:h-full" webp={webp} jpg={jpg} alt={alt} />
       <div className="w-full md:absolute flex flex-col justify-center md:block md:bottom-4 md:left-2 py-1 px-4 md:w-72 bg-white rounded-md shadow-md text-center md:text-left">
         <h1>{name}</h1>
         <h3 className="text-gray-400 text-sm">{place}</h3>

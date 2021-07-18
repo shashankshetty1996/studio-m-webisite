@@ -1,10 +1,10 @@
 .nav-link.active {
   color: white;
-  background-color: var(--brand-color);
+  background-color: var(--primary-color);
 }
 
 .logo {
-  color: var(--brand-color);
+  color: var(--primary-color);
 }
 
 @media (min-width: 768px) {
@@ -15,7 +15,7 @@
   .nav-link:hover,
   .nav-link.active {
     background-color: initial;
-    border-bottom: 1px solid var(--brand-color);
-    color: var(--brand-color);
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--primary-color);
   }
 }

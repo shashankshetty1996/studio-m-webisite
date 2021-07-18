@@ -1,9 +1,11 @@
 import { FC } from "react";
 
+import { ComingSoon } from '../../layout';
+
 const ProjectsMain: FC<{}> = () => {
   return (
-    <section>
-      <h1>Project screen</h1>
+    <section className="h-screen pt-16 bg-gray-50">
+      <ComingSoon />
     </section>
   );
 };

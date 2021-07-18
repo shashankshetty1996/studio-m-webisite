@@ -14,7 +14,7 @@ const EmailLink: FC<{ link: string }> = (props) => (
 
 const ContactUsMain: FC<{}> = () => {
   return (
-    <section className="bg-gray-50 mt-16">
+    <section className="bg-gray-50 pt-16 min-h-screen flex flex-col justify-between">
       {/* banner image */}
       {/* about team */}
       <MeetTheTeam />
