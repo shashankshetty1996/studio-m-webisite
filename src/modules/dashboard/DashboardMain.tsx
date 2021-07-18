@@ -10,8 +10,7 @@ interface useImageCarouselResponse {
 }
 
 type interval = NodeJS.Timeout | undefined;
-// const duration = 5000;
-const duration = 500000000;
+const duration = 5000;
 const windowWidth = window.innerWidth;
 const useImageCarousel = (): useImageCarouselResponse => {
   const [index, setIndex] = useState<number>(0);
