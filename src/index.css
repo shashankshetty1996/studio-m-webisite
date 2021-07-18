@@ -12,5 +12,9 @@ body {
 }
 
 :root {
-  --brand-color: #b38a4a;
+  --primary-color: #b38a4a;
+}
+
+.text-primary {
+  color: var(--primary-color);
 }
