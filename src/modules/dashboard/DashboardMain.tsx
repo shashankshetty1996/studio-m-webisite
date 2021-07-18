@@ -1,70 +1,12 @@
-import { FC, useState, useEffect, useRef } from "react";
+import { FC } from "react";
 
 import DashboardImage from "./DashboardImage";
 import { ImageList } from "./DashboardImageList";
 
-interface useImageCarouselResponse {
-  activeIndex: number;
-  scrollElem: React.RefObject<HTMLDivElement>;
-  scrollByIndex: (index: number) => void;
-}
-
-type interval = NodeJS.Timeout | undefined;
-const duration = 5000;
-const windowWidth = window.innerWidth;
-const useImageCarousel = (): useImageCarouselResponse => {
-  const [index, setIndex] = useState<number>(0);
-
-  const scrollElem = useRef<HTMLDivElement>(null);
-  const intervalRef = useRef<interval>();
-
-  const _createCarouselInterval = () => {
-    intervalRef.current = setTimeout(() => {
-      setIndex((oldIndex) => {
-        const updatedIndex = (oldIndex + 1) % ImageList.length;
-        return updatedIndex;
-      });
-    }, duration);
-  };
-
-  const _clearCarouselInterval = (interval: interval) => {
-    if (interval) {
-      clearInterval(interval);
-    }
-  };
-
-  const _smoothLeftShiftBy = (shiftBy: number) => {
-    scrollElem.current?.scrollBy({
-      left: shiftBy,
-      behavior: "smooth",
-    });
-  };
-
-  const scrollByIndex = (index: number) => {
-    _clearCarouselInterval(intervalRef.current);
-    setIndex(index);
-  };
-
-  useEffect(() => {
-    const interval = intervalRef.current;
-    const shiftBy = index * windowWidth - (scrollElem.current?.scrollLeft ?? 0);
-    _smoothLeftShiftBy(shiftBy);
-    _createCarouselInterval();
-
-    return () => {
-      _clearCarouselInterval(interval);
-    };
-  }, [index]);
-
-  return {
-    activeIndex: index,
-    scrollElem,
-    scrollByIndex,
-  };
-};
+import useImageCarousel from '../../utils/custom-hooks/ImageCarouselHook'
 
 const DashboardMain: FC<{}> = () => {
-  const { scrollElem, scrollByIndex, activeIndex } = useImageCarousel();
+  const { scrollElem, scrollByIndex, activeIndex } = useImageCarousel({ numberOfItems: ImageList.length });
 
   return (
     <section className="relative w-screen h-screen bg-gray-50">
