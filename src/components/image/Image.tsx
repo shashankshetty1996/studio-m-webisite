@@ -14,7 +14,7 @@ const Image: FC<Props> = (props) => {
     <picture className={containerClassName}>
       <source className={className} srcSet={webp} type="image/webp" />
       <source className={className} srcSet={jpg} type="image/jpeg" />
-      <img className={className} src={jpg} alt={alt} />
+      <img className={className} src={jpg} alt={alt} loading="lazy" />
     </picture>
   );
 };

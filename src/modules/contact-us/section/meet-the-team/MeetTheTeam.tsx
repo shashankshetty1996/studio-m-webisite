@@ -51,7 +51,7 @@ const members: Member[] = [
 const MeetTheTeam: FC<{}> = () => {
   return (
     <section className="container mx-auto">
-      <h1 className="text-center text-3xl md:text-4xl py-2">Meet Our Team</h1>
+      <h1 className="text-center text-3xl md:text-4xl py-4">Meet Our Team</h1>
       <div className="flex flex-wrap md:flex-nowrap items-center justify-around">
         {members.map((member, index) => (
           <Card
